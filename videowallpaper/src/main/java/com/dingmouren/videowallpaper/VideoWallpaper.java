@@ -91,6 +91,10 @@ public class VideoWallpaper extends WallpaperService {
 
         @Override
         public void onVisibilityChanged(boolean visible) {
+            if (TextUtils.isEmpty(sVideoPath)) {
+                Log.d("==w", "videoPath为空");
+                return;
+            }
             if (visible) {
                 mMediaPlayer.start();
             } else {
